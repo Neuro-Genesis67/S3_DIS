@@ -9,35 +9,26 @@ import java.net.Socket;
 
 public class TCPServer {
 
-	public static void main(String[] args) throws Exception, IOException  {
-		
+	public static void main(String[] args) throws Exception, IOException {
+		String clientMessage;
+		String serverMessage;
 		ServerSocket serverSocket = new ServerSocket(8011);
+		
 		BufferedReader inFromServer = new BufferedReader(new InputStreamReader(System.in));
 		
-		while(true) {
+		while (true) {
 		Socket connectionSocket = serverSocket.accept();
-		
 		BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 		DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 		
-		ThreadSender sender = new ThreadSender(outToClient, inFromServer);
-		ThreadReceiver receiver = new ThreadReceiver(inFromServer);
+		ThreadSender ts = new ThreadSender(inFromServer, outToClient);
+		ThreadReciever tr = new ThreadReciever(inFromClient);
 		
-		sender.start();
-		receiver.start();
+		
+			ts.start();
+			tr.start();
+		
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }
