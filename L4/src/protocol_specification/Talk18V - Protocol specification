@@ -1,0 +1,13 @@
+Talk18V
+
+Protocol specification:
+
+-This protocol uses a TCP-connection.
+
+-You can only communicate with one server at a time and the server can only communicate with one client at a time.
+
+-The Talk-client must ask the Talk-server, whether it wants to establish a communication between them.
+
+-Once the Talk-client or the Server-client has sent a message, it can't send any additional messages, until a message has been received. The same rule applies to the Talk-client.
+
+-The user must specify which server it wants to communicate with, by establishing a link to the server, by specifying the servers' IP-Address & port number.
