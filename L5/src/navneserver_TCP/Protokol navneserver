@@ -1,0 +1,7 @@
+Navneserver protokol:
+
+-Navneserveren skal kunne håndtere flere klienter ”samtidigt”.
+
+-Navneserveren er en server.
+
+-Navneserveren har en hardkodet liste med navne og deres dertilhørende IP-addresser.

@@ -12,7 +12,7 @@ public class TCPServer {
 	public static void main(String[] args) throws Exception, IOException {
 		String clientMessage;
 		String serverMessage;
-		ServerSocket serverSocket = new ServerSocket(8011);
+		ServerSocket serverSocket = new ServerSocket(8012);
 		
 		BufferedReader inFromServer = new BufferedReader(new InputStreamReader(System.in));
 		
